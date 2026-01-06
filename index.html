@@ -3,69 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PCB Design Services</title>
+<title>Professional PCB Design Services</title>
 
 <style>
+:root{
+    --primary:#0b2c5f;
+    --accent:#f4b400;
+    --dark:#1c1c1c;
+    --light:#f6f8fb;
+    --success:#009688;
+}
+
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#fff;
-    color:#222;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.6;
 }
+
+/* ---------- HERO ---------- */
+.hero{
+    background:linear-gradient(135deg, var(--primary), #123d80);
+    color:#fff;
+    padding:70px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+    font-size:18px;
+    opacity:.95;
+}
+
+/* ---------- CONTAINER ---------- */
 .container{
     max-width:1200px;
     margin:auto;
-    padding:20px;
+    padding:40px 20px;
 }
-h1{
-    color:#f4b400;
-    margin-bottom:30px;
+
+/* ---------- SERVICE CARD ---------- */
+.service{
+    background:#fff;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    margin-bottom:40px;
+    overflow:hidden;
 }
-.section{
+
+.service-inner{
     display:grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns:1.2fr .8fr;
     gap:30px;
-    padding:40px 0;
-    border-bottom:1px solid #ddd;
+    padding:35px;
 }
-.section img{
-    width:100%;
-    border:1px solid #ccc;
-}
-.section h2{
-    color:#0b2c5f;
+
+.service h2{
+    color:var(--primary);
     margin-top:0;
 }
+
+.service p{
+    color:#555;
+}
+
+/* ---------- PRICE ---------- */
 .price-box{
     display:flex;
-    margin:15px 0;
-}
-.price-label{
-    background:#ff5722;
-    color:#fff;
-    padding:12px;
-    min-width:130px;
+    margin:12px 0;
+    border-radius:6px;
+    overflow:hidden;
     font-size:14px;
 }
-.price-value{
-    background:#009688;
-    color:#fff;
+
+.price-label{
+    background:var(--accent);
+    color:#000;
     padding:12px;
-    min-width:180px;
-    font-weight:bold;
+    min-width:140px;
+    font-weight:600;
 }
+
+.price-value{
+    background:var(--success);
+    color:#fff;
+    padding:12px 16px;
+    flex:1;
+    font-weight:600;
+}
+
+/* ---------- WHATSAPP ---------- */
+.whatsapp{
+    display:inline-block;
+    margin-top:15px;
+    background:#25d366;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* ---------- STRENGTH ---------- */
+.strength img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
 .strength h3{
-    color:#0b2c5f;
+    color:var(--primary);
+    margin-top:0;
 }
+
 .strength ul{
     padding-left:18px;
 }
+
 .strength li{
     margin-bottom:8px;
 }
+
+/* ---------- COURSE ---------- */
+.course{
+    background:linear-gradient(135deg,#fff,#eef3ff);
+    border-left:6px solid var(--primary);
+}
+
+/* ---------- FOOTER ---------- */
+.footer{
+    text-align:center;
+    padding:25px;
+    background:#0b2c5f;
+    color:#fff;
+    font-size:14px;
+}
+
+/* ---------- RESPONSIVE ---------- */
 @media(max-width:900px){
-    .section{
+    .service-inner{
         grid-template-columns:1fr;
+    }
+    .hero h1{
+        font-size:30px;
     }
 }
 </style>
@@ -73,23 +164,23 @@ h1{
 
 <body>
 
-<div class="container">
-<h1>PCB Design Services</h1>
+<!-- HERO -->
+<section class="hero">
+    <h1>Professional PCB Design Services</h1>
+    <p>Schematic, PCB Layout, Fabrication, Assembly & Training — Delivered with Industry-Grade Accuracy</p>
+</section>
 
-<!-- 1 -->
-<div class="section">
+<div class="container">
+
+<!-- SERVICE 1 -->
+<div class="service">
+<div class="service-inner">
 <div>
 <h2>Schematic Symbol & PCB Footprint Creation</h2>
-<p>
-We create all kind of symbols required for schematics drawings in KiCAD.
-Common symbols like resistor, capacitor, inductor, common digital ICs etc
-are already available in KiCAD. But there are cases where no symbols will
-be available. For PCBs, footprints are required for designing. We create
-SMD, through hole and special footprints.
-</p>
+<p>Custom schematic symbols and PCB footprints designed for KiCad. Optimized for manufacturing, hand-soldering, and reflow.</p>
 
 <div class="price-box">
-<div class="price-label">Price per hour</div>
+<div class="price-label">Price / Hour</div>
 <div class="price-value">₹ 420.00</div>
 </div>
 
@@ -98,41 +189,33 @@ SMD, through hole and special footprints.
 <div class="price-value">₹ 3,360.00</div>
 </div>
 
-<div class="price-box">
-<div class="price-label">Call/SMS</div>
-<div class="price-value">
-<a href="https://wa.me/917012726930?text=Hi, I need PCB service" target="_blank">
-+91 70127 26930
+<a class="whatsapp" href="https://wa.me/917012726930?text=Hi, I need PCB service" target="_blank">
+Contact on WhatsApp
 </a>
-</div>
-</div>
 </div>
 
 <div class="strength">
-<img src="symbol.png" alt="">
+<img src="symbol.png" alt="PCB Symbols">
 <h3>Strength</h3>
 <ul>
-<li>All kind of schematic symbols</li>
-<li>All kind of PCB footprints</li>
-<li>Easy to use schematic symbols</li>
-<li>Footprints for hand soldering & reflow</li>
-<li>Very less creation time</li>
+<li>Custom & standard symbols</li>
+<li>Accurate footprint dimensions</li>
+<li>Manufacturing-ready libraries</li>
+<li>Fast turnaround time</li>
 </ul>
 </div>
 </div>
+</div>
 
-<!-- 2 -->
-<div class="section">
+<!-- SERVICE 2 -->
+<div class="service">
+<div class="service-inner">
 <div>
-<h2>Schematic drawing in CAD Software</h2>
-<p>
-We do all kind of schematic drawings in KiCAD software.
-We ensure clarity and easy understanding. Three stage verification
-helps to rectify errors early and reduce fabrication cost.
-</p>
+<h2>Schematic Design</h2>
+<p>Clear, verified schematics with multi-stage error checking to reduce PCB rework and cost.</p>
 
 <div class="price-box">
-<div class="price-label">Price per hour</div>
+<div class="price-label">Price / Hour</div>
 <div class="price-value">₹ 300.00</div>
 </div>
 
@@ -141,168 +224,92 @@ helps to rectify errors early and reduce fabrication cost.
 <div class="price-value">₹ 3,000.00</div>
 </div>
 
-<div class="price-box">
-<div class="price-label">Call/SMS</div>
-<div class="price-value">
-<a href="https://wa.me/917012726930?text=Hi, I need PCB service" target="_blank">
-+91 70127 26930
-</a>
-</div>
-</div>
+<a class="whatsapp" href="https://wa.me/917012726930" target="_blank">Contact on WhatsApp</a>
 </div>
 
 <div class="strength">
-<img src="schematic.png" alt="">
+<img src="schematic.png" alt="Schematic Design">
 <h3>Strength</h3>
 <ul>
-<li>Easily understandable schematics</li>
-<li>Open source KiCAD software</li>
-<li>Experienced professionals</li>
-<li>Three stage verification</li>
-<li>Very fast schematic creation</li>
+<li>Easy-to-understand circuits</li>
+<li>KiCad open-source workflow</li>
+<li>Three-stage verification</li>
 </ul>
 </div>
 </div>
+</div>
 
-<!-- 3 -->
-<div class="section">
+<!-- SERVICE 3 -->
+<div class="service">
+<div class="service-inner">
 <div>
-<h2>PCB Design in CAD Software</h2>
-<p>
-We design simple to complex PCBs including single layer,
-double layer and multi-layer boards. Analog, digital and
-mixed signal designs are handled carefully to reduce noise
-and errors.
-</p>
+<h2>PCB Layout Design</h2>
+<p>Single-layer to multi-layer PCB layouts with noise-controlled routing for analog and digital circuits.</p>
 
 <div class="price-box">
-<div class="price-label">Price per hour</div>
+<div class="price-label">Price / Hour</div>
 <div class="price-value">₹ 480.00</div>
 </div>
 
 <div class="price-box">
-<div class="price-label">Minimum charge</div>
+<div class="price-label">Minimum Charge</div>
 <div class="price-value">₹ 3,840.00</div>
 </div>
 
-<div class="price-box">
-<div class="price-label">Call/SMS</div>
-<div class="price-value">
-<a href="https://wa.me/917012726930?text=Hi, I need PCB service" target="_blank">
-+91 70127 26930
-</a>
-</div>
-</div>
+<a class="whatsapp" href="https://wa.me/917012726930" target="_blank">Contact on WhatsApp</a>
 </div>
 
 <div class="strength">
-<img src="pcb.png" alt="">
+<img src="pcb.png" alt="PCB Layout">
 <h3>Strength</h3>
 <ul>
-<li>Single sided & multi-layer PCBs</li>
-<li>Analog, Digital & Mixed designs</li>
-<li>Low cost designing</li>
-<li>Professional designers</li>
-<li>No reverse engineering work</li>
+<li>Single to multi-layer boards</li>
+<li>Noise-aware routing</li>
+<li>Industry-standard rules</li>
 </ul>
 </div>
 </div>
+</div>
 
-<!-- 4 -->
-<div class="section">
+<!-- COURSE -->
+<div class="service course">
+<div class="service-inner">
 <div>
-<h2>PCB Fabrication & Testing</h2>
-<p>
-We provide PCB fabrication services including FPT (Flying Probe Test).
-We outsource fabrication to trusted vendors and reduce cost by bulk
-ordering.
-</p>
+<h2>PCB Designing Course (Practical Training)</h2>
+<p>Hands-on PCB design course covering schematic capture, footprint creation, layout, and manufacturing files.</p>
 
 <div class="price-box">
-<div class="price-label">Price per layer</div>
-<div class="price-value">₹ 9.00 per mm²</div>
+<div class="price-label">Mode</div>
+<div class="price-value">Online / Offline</div>
 </div>
 
 <div class="price-box">
-<div class="price-label">Lead Time</div>
-<div class="price-value">4 weeks</div>
+<div class="price-label">Level</div>
+<div class="price-value">Beginner → Advanced</div>
 </div>
 
-<div class="price-box">
-<div class="price-label">Minimum cost</div>
-<div class="price-value">₹ 9,000.00</div>
-</div>
-
-<div class="price-box">
-<div class="price-label">Call/SMS</div>
-<div class="price-value">
-<a href="https://wa.me/917012726930?text=Hi, I need PCB service" target="_blank">
-+91 70127 26930
+<a class="whatsapp" href="https://wa.me/917012726930?text=Hi, I want PCB design training" target="_blank">
+Enroll via WhatsApp
 </a>
-</div>
-</div>
 </div>
 
 <div class="strength">
-<img src="fabrication.png" alt="">
-<h3>Strength</h3>
+<img src="course.png" alt="PCB Course">
+<h3>You Will Learn</h3>
 <ul>
-<li>Low cost single layer PCBs</li>
-<li>Multi-layer PCB support</li>
-<li>Engineering & bulk quantity support</li>
-<li>Flying Probe Testing</li>
+<li>Complete KiCad workflow</li>
+<li>Industry PCB standards</li>
+<li>Real-world projects</li>
 </ul>
 </div>
 </div>
-
-<!-- 5 -->
-<div class="section">
-<div>
-<h2>Component Purchase & PCB Population</h2>
-<p>
-We provide component purchase and PCB population services
-for engineering samples. Manual soldering and reflow soldering
-are supported.
-</p>
-
-<div class="price-box">
-<div class="price-label">Price per pad</div>
-<div class="price-value">₹ 4.20</div>
-</div>
-
-<div class="price-box">
-<div class="price-label">Lead Time</div>
-<div class="price-value">Depends on quantity</div>
-</div>
-
-<div class="price-box">
-<div class="price-label">Minimum Charge</div>
-<div class="price-value">₹ 8,064.00</div>
-</div>
-
-<div class="price-box">
-<div class="price-label">Call/SMS</div>
-<div class="price-value">
-<a href="https://wa.me/917012726930?text=Hi" target="_blank">
-+91 70127 26930
-</a>
-</div>
-</div>
-</div>
-
-<div class="strength">
-<img src="population.png" alt="">
-<h3>Strength</h3>
-<ul>
-<li>Engineering purpose population</li>
-<li>SMD & through hole components</li>
-<li>Highly skilled engineers</li>
-<li>Accurate assembling</li>
-<li>In-house hand soldering</li>
-</ul>
-</div>
 </div>
 
 </div>
+
+<footer class="footer">
+© 2026 Professional PCB Design Services | All Rights Reserved
+</footer>
+
 </body>
-</html><h2></h2>
+</html>
